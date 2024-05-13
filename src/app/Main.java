@@ -1,17 +1,13 @@
 package app;
 
-import model.DAO.UserDAO;
-import model.entities.User;
+import java.sql.Connection;
+
+import db.DB;
 
 public class Main {
     public static void main(String[] args) {
 
-        User u = new User();
-        
-        u.setName("Luan");
-        u.setIdade(20);
-
-        new UserDAO().cadastrarUsuario(u);
-
+        Connection conn = DB.gConnection();
+        DB.closeConnection();
     }
 }
