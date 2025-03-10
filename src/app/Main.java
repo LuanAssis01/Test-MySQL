@@ -1,17 +1,29 @@
 package app;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import db.DB;
+import db.DbException;
 import model.DAO.UserDAO;
 import model.entities.User;
 
 public class Main {
     public static void main(String[] args) {
 
-        User u = new User();
-        
-        u.setName("Luan");
-        u.setIdade(20);
+        Connection conn = DB.gConnection();
 
-        new UserDAO().cadastrarUsuario(u);
+        try {
+            User u = new User();
 
+            u.setName("Flávia");
+            u.setAge(17);
+
+            new UserDAO().cadastrarUsuario(u);
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }
+
+        DB.closeConnection();
     }
 }

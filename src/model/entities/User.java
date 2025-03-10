@@ -1,26 +1,17 @@
 package model.entities;
 
 public class User {
-    private Integer codigo;
+
     private String name;
-    private Integer idade;
+    private Integer age;
 
     public User() {
 
     }
 
-    public User(Integer codigo, String name, Integer idade) {
-        this.codigo = codigo;
+    public User(String name, Integer age) {
         this.name = name;
-        this.idade = idade;
-    }
-
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+        this.age = age;
     }
 
     public String getName() {
@@ -31,17 +22,12 @@ public class User {
         this.name = name;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
-    }
-
-    @Override
-    public String toString() {
-        return "User [getCodigo()=" + getCodigo() + ", getName()=" + getName() + ", getIdade()=" + getIdade() + "]";
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
 }
